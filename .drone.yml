@@ -2,12 +2,14 @@ kind: pipeline
 type: docker
 name: default
 
-workspace:
-  path: /myworkspace/seint
-
 steps:
-- name: linth
-  image: python:3.7-alpine
+- name: build
+  image: node
   commands:
-  - python -m pip install -r requirements.txt
-  - flake8
+  - npm install
+  - npm test
+
+- name: notify
+  image: plugins/slack
+  settings:
+    webhook: https://hooks.slack.com/services/...
