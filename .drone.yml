@@ -12,4 +12,4 @@ steps:
 - name: notify
   image: plugins/slack
   settings:
-    webhook: https://hooks.slack.com/services/
+    webhook: https://hooks.slack.com/services/...
