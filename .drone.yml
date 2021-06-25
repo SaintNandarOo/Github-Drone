@@ -4,5 +4,5 @@ name: default
 
 steps:
 - name: build
-  pull: always
+  pull: never
   image: golang:1.12
