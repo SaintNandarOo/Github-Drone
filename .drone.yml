@@ -2,12 +2,6 @@ kind: pipeline
 type: docker
 name: default
 
-workspace:
-  path: /myworkspace/seint
-
 steps:
-- name: lint
-  image: python:3.7-alpine
-  commands:
-  - python -m pip install -r requirements.txt
-  - flake8
+- name: build
+  image: index.docker.io/library/golang
