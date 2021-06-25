@@ -4,4 +4,5 @@ name: default
 
 steps:
 - name: build
-  image: index.docker.io/library/golang
+  pull: if-not-exists
+  image: golang
