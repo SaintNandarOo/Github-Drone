@@ -9,6 +9,6 @@ steps:
   image: golang:1.14.4
   
   when:
-  event:
+  repo:
     include:
-    - push
+    - DroneTest-Seint/Drone-testing
