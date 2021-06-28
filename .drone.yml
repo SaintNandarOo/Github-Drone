@@ -1,22 +1,9 @@
 kind: pipeline
-name: testing
-
+type: docker
+name: linux-amd64
+platform:
+  arch: amd64
+  os: linux
 steps:
-- name: first
-  image: php
-  commands:
-  - echo “Output from first step”;
-
-- name: second
-  image: php
-  commands:
-  - echo “Output from second step”;
-
-- name: third
-  image: php
-  commands:
-  - echo “Output from third step”;
-
-  depends_on:
-  - first
-  - second
+- name: test
+  image: golang:1.14.4
