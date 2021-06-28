@@ -1,8 +1,22 @@
 kind: pipeline
-type: docker
-name: default
+name: testing
 
 steps:
-- name: build
-  pull: never
-  image: golang:1.12
+- name: first
+  image: php
+  commands:
+  - echo “Output from first step”;
+
+- name: second
+  image: php
+  commands:
+  - echo “Output from second step”;
+
+- name: third
+  image: php
+  commands:
+  - echo “Output from third step”;
+
+  depends_on:
+  - first
+  - second
