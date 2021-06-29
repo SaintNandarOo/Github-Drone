@@ -1,14 +1,14 @@
 kind: pipeline
-type: docker
-name: linux-amd64
-platform:
-  arch: amd64
-  os: linux
+name: default
+
 steps:
-- name: test
-  image: golang:1.14.4
-  
-  when:
-  repo:
-    include:
-    - DroneTest-Seint/Drone-testing
+- name: cache
+  image: drillster/drone-volume-cache
+  volumes:
+  - name: cache
+    path: /cache
+
+volumes:
+  - name: cache
+    host: 
+    path: /var/lib/cache
