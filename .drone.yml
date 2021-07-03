@@ -1,23 +1,10 @@
 kind: pipeline
+type: docker
 name: default
 
 steps:
-- name: foo
-  image: alpine:3.8
-  volumes:
-  - name: m2
-    path: /root/.m2
-  commands:
-  - touch /root/.m2/foo.txt
-
-- name: bar
-  image: alpine:3.8
-  volumes:
-  - name: m2
-    path: /root/.m2
-  commands:
-  - ls /root/.m2/
-
-volumes:
-- name: m2
-  temp: {}
+  - name: lint
+    image: python:3.7-alpine
+    commands:
+      - python -m pip install -r requirements.txt
+      - flake8
