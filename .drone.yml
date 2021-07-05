@@ -1,12 +1,9 @@
 kind: pipeline
 type: docker
-name: default
+name: linux-amd64
+platform:
+  arch: amd64
+  os: linux
 steps:
 - name: test
-  image: alpine
-  
-- name: slack-end
-  image: plugins/slack
-  settings:
-    webhook:
-      from_secret: SlackWebhook
+  image: golang:1.14.4
