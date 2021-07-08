@@ -7,7 +7,4 @@ steps:
   commands:
   - composer install
 
-- name: test
-  image: php:7
-  commands:
-  - vendor/bin/phpunit --configuration config.xml
+
