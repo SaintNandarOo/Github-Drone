@@ -1,31 +1,13 @@
----
 kind: pipeline
-name: test-on-amd64
-
-platform:
-  arch: amd64
+name: default
 
 steps:
-- name: test
-  image: gcc
+- name: install
+  image: composer
   commands:
-  - ./configure
-  - make
-  - make test
+  - composer install
 
----
-kind: pipeline
-name: test-on-arm64
-
-platform:
-  arch: arm64
-
-steps:
 - name: test
-  image: gcc
+  image: php:7
   commands:
-  - ./configure
-  - make
-  - make test
-
-...
+  - vendor/bin/phpunit --configuration config.xml
