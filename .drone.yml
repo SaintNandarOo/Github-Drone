@@ -1,9 +1,11 @@
+---
 kind: pipeline
+type: docker
 name: default
 
 steps:
-- name: install
-  image: composer
-
-- name: test
-  image: php:7
+  - name: lint
+    image: python:3.7-alpine
+    commands:
+      - python -m pip install -r requirements.txt
+      - flake8
