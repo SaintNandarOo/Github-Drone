@@ -1,8 +1,11 @@
+---
 kind: pipeline
+type: docker
 name: default
 
 steps:
 - name: test
-  image: python
+  image: 012345678910.dkr.ecr.eu-west-1.amazonaws.com/mytestimg:1.0
   commands:
-  - pip install -r requirements.txt
+  - npm install
+  - npm test
