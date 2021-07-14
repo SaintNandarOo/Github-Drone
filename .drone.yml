@@ -1,11 +1,25 @@
----
 kind: pipeline
-type: docker
 name: default
 
 steps:
-- name: testing
-  image: 012345678910.dkr.ecr.eu-west-1.amazonaws.com/mytestimg:1.0
+- name: build
+  image: golang:1.12
+  environment:
+    CGO_ENABLED: "0"
   commands:
-  - npm install
-  - npm test
+  - go test -v -cover ./...
+  - go build
+
+- name: publish
+  image: plugins/docker
+  settings:
+    auto_tag: true
+    repo: drone/registry-plugin
+    password:
+      from_secret: docker_password
+    username:
+      from_secret: docker_username
+  when:
+    event:
+    - push
+    - tag
