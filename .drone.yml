@@ -3,15 +3,5 @@ kind: pipeline
 type: ssh
 name: default
 
-server:
-  host: seint-drone.digitalstacks.net
-  user: seint-drone
-  password:
-    from_secret: password
-
 steps:
 - name: greeting
-  commands:
-  - echo hello world
-
-...
