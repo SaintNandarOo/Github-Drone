@@ -4,12 +4,16 @@ type: ssh
 name: default
 
 server:
-  host: 35.72.31.70
-  user: ubuntu
+  host:
+    from_secret: host
+  user:
+    from_secret: username
   ssh_key:
-    from_secret: ssh
+    from_secret: ssh_key
 
 steps:
 - name: greeting
   commands:
   - echo hello world
+
+...
