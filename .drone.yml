@@ -4,7 +4,7 @@ name: default
 
 server:
   host: 35.72.31.70
-  user: root
+  user: ubuntu
   password: virtualcom
 
 steps:
