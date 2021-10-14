@@ -8,7 +8,8 @@ server:
   password: virtualcom
 
 steps:
-- name: build
+- name: greeting
   commands:
-  - go build
-  - go test
+  - echo hello world
+
+...
