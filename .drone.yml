@@ -1,19 +1,14 @@
----
 kind: pipeline
 type: ssh
 name: default
 
 server:
-  host:
-    from_secret: host
-  user:
-    from_secret: username
-  ssh_key:
-    from_secret: ssh_key
+  host: 35.72.31.70
+  user: root
+  password: virtualcom
 
 steps:
-- name: greeting
+- name: build
   commands:
-  - echo hello world
-
-...
+  - go build
+  - go test
