@@ -6,7 +6,8 @@ name: default
 server:
   host:
     from_secret: host
-  user: ubuntu
+  user:
+    from_secret: username
   ssh_key:
     from_secret: ssh_key
 
