@@ -3,5 +3,17 @@ kind: pipeline
 type: ssh
 name: default
 
+server:
+  host:
+    from_secret: host
+  user:
+    from_secret: username
+  password:
+    from_secret: password
+
 steps:
 - name: greeting
+  commands:
+  - echo hello world
+
+...
