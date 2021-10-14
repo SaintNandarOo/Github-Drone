@@ -3,9 +3,15 @@ kind: pipeline
 type: ssh
 name: default
 
+server:
+  host: seint-drone.digitalstacks.net
+  user: seint-drone
+  password:
+    from_secret: password
+
 steps:
-  - name: lint
-    image: python:3.7-alpine
-    commands:
-      - python -m pip install -r requirements.txt
-      - flake8
+- name: greeting
+  commands:
+  - echo hello world
+
+...
