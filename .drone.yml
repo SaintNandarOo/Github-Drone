@@ -4,7 +4,10 @@ type: ssh
 name: default
 
 server:
-  host: seint-drone.digitalstacks.net
+  host: 35.72.31.70
+  user: root
+  password:
+    from_secret: password
 
 steps:
 - name: greeting
