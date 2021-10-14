@@ -4,12 +4,10 @@ type: ssh
 name: default
 
 server:
-  host:
-    from_secret: host
-  user:
-    from_secret: username
-  password:
-    from_secret: password
+  host: 35.72.31.70
+  user: ubuntu
+  ssh_key:
+    from_secret: ssh
 
 steps:
 - name: greeting
