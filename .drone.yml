@@ -4,10 +4,8 @@ type: ssh
 name: default
 
 server:
-  host:
-    from_secret: host
-  user:
-    from_secret: username
+  host: seint-drone.digitalstacks.net
+  user: ubuntu
   ssh_key:
     from_secret: ssh_key
 
