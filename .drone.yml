@@ -3,12 +3,12 @@ type: ssh
 name: default
 
 server:
-  host: 35.72.31.70
-  user: root
-  password: virtualcom
+  host: 18.181.228.86
+  user: ubuntu
+  ssh_key:
+    from_secret: ssh_key
 
 steps:
-- name: build
+- name: greetings
   commands:
-  - ls
-
+  - echo hello world
