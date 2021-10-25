@@ -3,7 +3,7 @@ type: ssh
 name: default
 
 server:
-  host: 18.181.228.86
+  host: 35.74.27.106
   user: ubuntu
   ssh_key:
     from_secret: ssh_key
